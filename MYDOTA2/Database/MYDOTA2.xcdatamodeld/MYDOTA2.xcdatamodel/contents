@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="Hero" representedClassName="Hero" syncable="YES">
+        <attribute name="heroID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localizedName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="namePinyin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="namePinyinHeader" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="ability" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="HeroAbility" inverseName="whoseAbility" inverseEntity="HeroAbility" syncable="YES"/>
+        <relationship name="detail" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="HeroDetail" inverseName="whoseDetail" inverseEntity="HeroDetail" syncable="YES"/>
+    </entity>
+    <entity name="HeroAbility" representedClassName="HeroAbility" syncable="YES">
+        <attribute name="abilityDiscription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="abilityIconURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="abilityName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="abilityState" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="heroID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="whoseAbility" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Hero" inverseName="ability" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="HeroDetail" representedClassName="HeroDetail" syncable="YES">
+        <attribute name="heroDiscription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heroID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="heroRelated" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="whoseDetail" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Hero" inverseName="detail" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="iconURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="localizedName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="detail" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ItemDetail" inverseName="whoseDetail" inverseEntity="ItemDetail" syncable="YES"/>
+    </entity>
+    <entity name="ItemDetail" representedClassName="ItemDetail" syncable="YES">
+        <attribute name="cost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemDiscription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="recipe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="secretShop" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sideShop" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="whoseDetail" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Item" inverseName="detail" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Hero" positionX="-72" positionY="-9" width="128" height="165"/>
+        <element name="HeroAbility" positionX="-290" positionY="-9" width="128" height="135"/>
+        <element name="HeroDetail" positionX="135" positionY="-9" width="128" height="105"/>
+        <element name="Item" positionX="-47" positionY="198" width="128" height="120"/>
+        <element name="ItemDetail" positionX="-234" positionY="198" width="128" height="150"/>
+    </elements>
+</model>
