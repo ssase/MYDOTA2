@@ -14,4 +14,4 @@
 
 #endif /* Dota2APIKey_h */
 
-#define DOTA2_API_KEY @"D53028AC717F5FD432F9D489710CB7CE"
+#define DOTA2_API_KEY @""
