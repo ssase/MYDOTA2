@@ -2,7 +2,7 @@
 //  HeroAbility+CoreDataProperties.m
 //  MYDOTA2
 //
-//  Created by SASE on 7/24/16.
+//  Created by SASE on 8/11/16.
 //  Copyright © 2016 SASE. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,10 +14,12 @@
 @implementation HeroAbility (CoreDataProperties)
 
 @dynamic abilityDiscription;
-@dynamic abilityIconURL;
+@dynamic abilityLore;
 @dynamic abilityName;
+@dynamic abilityNote;
 @dynamic abilityState;
 @dynamic heroID;
+@dynamic abilityLocalizedName;
 @dynamic whoseAbility;
 
 @end

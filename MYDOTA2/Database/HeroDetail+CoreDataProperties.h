@@ -2,7 +2,7 @@
 //  HeroDetail+CoreDataProperties.h
 //  MYDOTA2
 //
-//  Created by SASE on 7/24/16.
+//  Created by SASE on 8/10/16.
 //  Copyright © 2016 SASE. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HeroDetail (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *heroDiscription;
+@property (nullable, nonatomic, retain) NSString *heroBio;
 @property (nullable, nonatomic, retain) NSString *heroID;
 @property (nullable, nonatomic, retain) NSString *heroRelated;
 @property (nullable, nonatomic, retain) Hero *whoseDetail;

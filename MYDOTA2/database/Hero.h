@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 // Insert code here to declare functionality of your managed object subclass
 
++ (Hero *)fetchHeroWithHeroID:(NSString *)heroID
+       inManagedObjectContext:(NSManagedObjectContext *)context;
+
 + (Hero *)heroWithDota2Info:(NSDictionary *)heroDictionary
      inManagedObjectContext:(NSManagedObjectContext *)context;
 

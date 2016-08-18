@@ -8,11 +8,12 @@
 
 #import "AppDelegate.h"
 #import "Dota2 Fetcher/Dota2Fetcher.h"
-#import "Hero.h"
+#import "HeroDetail.h"
+#import "HeroAbility.h"
 
 @interface AppDelegate ()
 
-@property (nonatomic,readonly) NSMutableDictionary *userInfoDic;
+@property (nonatomic) NSMutableDictionary *userInfoDic;
 
 @end
 
@@ -25,9 +26,7 @@
     
     //initialize character size,and so on
     NSLog(@"userInfoDic%@",self.userInfoDic);
-    
-    [[NSNotificationCenter defaultCenter]postNotificationName:managedObjectContextNotification object:self userInfo:@{content_managedObjectContext:self.managedObjectContext}];
-    
+        
     return YES;
 }
 
@@ -62,22 +61,21 @@
 
 #pragma mark - Some Data
 
-@synthesize userInfoDic = _userInfoDic;
-
 - (NSMutableDictionary *)userInfoDic
 {
     if (_userInfoDic) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:managedObjectContextNotification object:self userInfo:@{content_managedObjectContext:self.managedObjectContext}];
         return _userInfoDic;
     }
 
     _userInfoDic = [[[NSMutableDictionary alloc]initWithContentsOfFile:USERINFOLISTPATH] mutableCopy];
     if (_userInfoDic) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:managedObjectContextNotification object:self userInfo:@{content_managedObjectContext:self.managedObjectContext}];
         return _userInfoDic;
     }
 
     //first time to run the app
-    [Hero loadHeroesFromDota2Array:[Dota2Fetcher heroes] intoManagedObjectContext:self.managedObjectContext];
-    [self saveContext];
+    [self fetchDataAndSaveIt];
     
     NSMutableDictionary *userInfoList = [[NSMutableDictionary alloc] init];
     _userInfoDic = [[NSMutableDictionary alloc] init];
@@ -85,6 +83,23 @@
     [userInfoList setValue:@"14" forKeyPath:@"Character Size"];
     [self setUserInfoDic:_userInfoDic WithDic:userInfoList];
     return _userInfoDic;
+}
+
+- (void)fetchDataAndSaveIt
+{
+    //dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        NSArray *tempHeroes = [Dota2Fetcher heroes];
+        
+        [HeroDetail loadHeroesDetailFromDota2Array:tempHeroes intoManagedObjectContext:self.managedObjectContext];
+        [HeroAbility loadHeroesAbilitiesFromDota2Array:tempHeroes intoManagedObjectContext:self.managedObjectContext];
+        
+        [self saveContext];
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:managedObjectContextNotification object:self userInfo:@{content_managedObjectContext:self.managedObjectContext}];
+
+    //});
+
 }
 
 - (void)setUserInfoDic:(NSMutableDictionary *)userInfoDic WithDic:(NSMutableDictionary *)dic

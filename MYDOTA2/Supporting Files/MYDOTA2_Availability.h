@@ -14,24 +14,30 @@
 
 #define USERINFOLISTPATH           [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)       objectAtIndex:0]stringByAppendingPathComponent:@"User_Info_List.plist"]
 
-#define DOTA2_HERO_HEADER            @"npc_dota_hero_"
+#define DOTA2_HERO_HEADER                   @"npc_dota_hero_"
 
-#define DOTA2_ITEM_ID                @"id"
-#define DOTA2_ITEM_NAME              @"name"
-#define DOTA2_ITEM_COST              @"cost"
-#define DOTA2_ITEM_SECRET_SHOP       @"secret_shop"
-#define DOTA2_ITEM_SIDE_SHOP         @"side_shop"
-#define DOTA2_ITEM_RECIPE            @"recipe"
-#define DOTA2_ITEM_LOCALIZED_NAME    @"localized_name"
+#define DOTA2_ITEM_ID                       @"id"
+#define DOTA2_ITEM_NAME                     @"name"
+#define DOTA2_ITEM_COST                     @"cost"
+#define DOTA2_ITEM_SECRET_SHOP              @"secret_shop"
+#define DOTA2_ITEM_SIDE_SHOP                @"side_shop"
+#define DOTA2_ITEM_RECIPE                   @"recipe"
+#define DOTA2_ITEM_LOCALIZED_NAME           @"localized_name"
 
-#define DOTA2_HERO_ID                @"id"
-#define DOTA2_HERO_NAME              @"name"
-#define DOTA2_HERO_LOCALIZED_NAME    @"localized_name"
+#define DOTA2_HERO_ID                       @"id"
+#define DOTA2_HERO_NAME                     @"name"
+#define DOTA2_HERO_LOCALIZED_NAME           @"localized_name"
 
-#define DOTA2_HERO_ICON_FORMATE_SB   @"sb.png"
-#define DOTA2_HERO_ICON_FORMATE_LG   @"lg.png"
-#define DOTA2_HERO_ICON_FORMATE_FULL @"full.png"
-#define DOTA2_HERO_ICON_FORMATE_VERT @"vert.jpg"
+#define DOTA2_HERO_ICON_FORMATE_SB          @"sb.png"
+#define DOTA2_HERO_ICON_FORMATE_LG          @"lg.png"
+#define DOTA2_HERO_ICON_FORMATE_FULL        @"full.png"
+#define DOTA2_HERO_ICON_FORMATE_VERT        @"vert.jpg"
 
+#define DOTA2_HERO_ABILITY_NAME             @"ability_name"
+#define DOTA2_HERO_ABILITY_LOCALIZED_NAME   @"ability_localized_name"
+#define DOTA2_HERO_ABILITY_STATE            @"ability_state"
+#define DOTA2_HERO_ABILITY_LORE             @"ability_lore"
+#define DOTA2_HERO_ABILITY_NOTE             @"ability_note"
+#define DOTA2_HERO_ABILITY_DESCRIPTION      @"ability_description"
 
 #endif /* MYDOTA2_Availability_h */

@@ -2,7 +2,7 @@
 //  HeroDetail+CoreDataProperties.m
 //  MYDOTA2
 //
-//  Created by SASE on 7/24/16.
+//  Created by SASE on 8/10/16.
 //  Copyright © 2016 SASE. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,7 +13,7 @@
 
 @implementation HeroDetail (CoreDataProperties)
 
-@dynamic heroDiscription;
+@dynamic heroBio;
 @dynamic heroID;
 @dynamic heroRelated;
 @dynamic whoseDetail;

@@ -16,6 +16,9 @@
 		5825CEA81D2FBDA800C45BE0 /* MYDOTA2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5825CEA61D2FBDA800C45BE0 /* MYDOTA2.xcdatamodeld */; };
 		5825CEAC1D2FBDB500C45BE0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5825CEAA1D2FBDB500C45BE0 /* main.m */; };
 		5825CEB51D2FCB3300C45BE0 /* Dota2Fetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 5825CEB41D2FCB3300C45BE0 /* Dota2Fetcher.m */; };
+		589025BD1D508F5900268640 /* HeroDetailViewUI.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589025BB1D508F5900268640 /* HeroDetailViewUI.xib */; };
+		5892F9941D5D732D00D1DA86 /* HeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5892F9921D5D732D00D1DA86 /* HeroCell.xib */; };
+		5892F9971D5D75EC00D1DA86 /* HeroTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892F9961D5D75EC00D1DA86 /* HeroTableViewCell.m */; };
 		58A481F31D3F1077009B53A7 /* HeroDetail+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A481E51D3F1077009B53A7 /* HeroDetail+CoreDataProperties.m */; };
 		58A481F41D3F1077009B53A7 /* HeroDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A481E71D3F1077009B53A7 /* HeroDetail.m */; };
 		58A481F61D3F1077009B53A7 /* HeroAbility+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A481EB1D3F1077009B53A7 /* HeroAbility+CoreDataProperties.m */; };
@@ -24,6 +27,7 @@
 		58A481F91D3F1077009B53A7 /* ItemDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A481F11D3F1077009B53A7 /* ItemDetail.m */; };
 		58A481FC1D3F119F009B53A7 /* Hero+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A481FB1D3F119F009B53A7 /* Hero+CoreDataProperties.m */; };
 		58AAD9BC1D45964300BB18C0 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58AAD9BB1D45964300BB18C0 /* TabBarController.m */; };
+		58B046A61D51E722007F7040 /* HeroDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B046A51D51E722007F7040 /* HeroDetailView.m */; };
 		58C1108E1D488F1400FED679 /* SearchFunctionHeroCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C1108D1D488F1400FED679 /* SearchFunctionHeroCDTVC.m */; };
 		58C110911D48A51B00FED679 /* HeroDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C110901D48A51B00FED679 /* HeroDetailViewController.m */; };
 		58EBF0761D30B336004707C7 /* HeroCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58EBF0751D30B336004707C7 /* HeroCDTVC.m */; };
@@ -50,6 +54,10 @@
 		5825CEB31D2FCB3300C45BE0 /* Dota2Fetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dota2Fetcher.h; path = "Dota2 Fetcher/Dota2Fetcher.h"; sourceTree = "<group>"; };
 		5825CEB41D2FCB3300C45BE0 /* Dota2Fetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dota2Fetcher.m; path = "Dota2 Fetcher/Dota2Fetcher.m"; sourceTree = "<group>"; };
 		5825CEBA1D2FD05100C45BE0 /* Dota2APIKey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Dota2APIKey.h; path = "Dota2 Fetcher/Dota2APIKey.h"; sourceTree = "<group>"; };
+		589025BC1D508F5900268640 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HeroDetailViewUI.xib; sourceTree = "<group>"; };
+		5892F9931D5D732D00D1DA86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/HeroCell.xib; sourceTree = "<group>"; };
+		5892F9951D5D75EC00D1DA86 /* HeroTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeroTableViewCell.h; path = Controller/HeroTableViewCell.h; sourceTree = "<group>"; };
+		5892F9961D5D75EC00D1DA86 /* HeroTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeroTableViewCell.m; path = Controller/HeroTableViewCell.m; sourceTree = "<group>"; };
 		58A481E41D3F1077009B53A7 /* HeroDetail+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "HeroDetail+CoreDataProperties.h"; path = "Database/HeroDetail+CoreDataProperties.h"; sourceTree = "<group>"; };
 		58A481E51D3F1077009B53A7 /* HeroDetail+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "HeroDetail+CoreDataProperties.m"; path = "Database/HeroDetail+CoreDataProperties.m"; sourceTree = "<group>"; };
 		58A481E61D3F1077009B53A7 /* HeroDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeroDetail.h; path = Database/HeroDetail.h; sourceTree = "<group>"; };
@@ -66,6 +74,8 @@
 		58A481FB1D3F119F009B53A7 /* Hero+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Hero+CoreDataProperties.m"; path = "Database/Hero+CoreDataProperties.m"; sourceTree = "<group>"; };
 		58AAD9BA1D45964300BB18C0 /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarController.h; path = Controller/TabBarController.h; sourceTree = "<group>"; };
 		58AAD9BB1D45964300BB18C0 /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabBarController.m; path = Controller/TabBarController.m; sourceTree = "<group>"; };
+		58B046A41D51E722007F7040 /* HeroDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeroDetailView.h; path = Controller/HeroDetailView.h; sourceTree = "<group>"; };
+		58B046A51D51E722007F7040 /* HeroDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HeroDetailView.m; path = Controller/HeroDetailView.m; sourceTree = "<group>"; };
 		58C1108C1D488F1400FED679 /* SearchFunctionHeroCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchFunctionHeroCDTVC.h; path = Controller/SearchFunctionHeroCDTVC.h; sourceTree = "<group>"; };
 		58C1108D1D488F1400FED679 /* SearchFunctionHeroCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchFunctionHeroCDTVC.m; path = Controller/SearchFunctionHeroCDTVC.m; sourceTree = "<group>"; };
 		58C1108F1D48A51B00FED679 /* HeroDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HeroDetailViewController.h; path = Controller/HeroDetailViewController.h; sourceTree = "<group>"; };
@@ -173,6 +183,8 @@
 		58C3878B1D3277640073D05A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5892F9921D5D732D00D1DA86 /* HeroCell.xib */,
+				589025BB1D508F5900268640 /* HeroDetailViewUI.xib */,
 				5825CE881D2FB97F00C45BE0 /* Main.storyboard */,
 				5825CE901D2FB98000C45BE0 /* LaunchScreen.storyboard */,
 			);
@@ -182,6 +194,10 @@
 		58EBF0731D30B253004707C7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5892F9951D5D75EC00D1DA86 /* HeroTableViewCell.h */,
+				5892F9961D5D75EC00D1DA86 /* HeroTableViewCell.m */,
+				58B046A41D51E722007F7040 /* HeroDetailView.h */,
+				58B046A51D51E722007F7040 /* HeroDetailView.m */,
 				58C1108F1D48A51B00FED679 /* HeroDetailViewController.h */,
 				58C110901D48A51B00FED679 /* HeroDetailViewController.m */,
 				58C1108C1D488F1400FED679 /* SearchFunctionHeroCDTVC.h */,
@@ -258,6 +274,8 @@
 				5825CE8F1D2FB98000C45BE0 /* Assets.xcassets in Resources */,
 				5825CE8A1D2FB97F00C45BE0 /* Main.storyboard in Resources */,
 				58EF79021D448622006FFE12 /* HeroInfo.json in Resources */,
+				5892F9941D5D732D00D1DA86 /* HeroCell.xib in Resources */,
+				589025BD1D508F5900268640 /* HeroDetailViewUI.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,8 +303,10 @@
 				58EBF0761D30B336004707C7 /* HeroCDTVC.m in Sources */,
 				5825CEAC1D2FBDB500C45BE0 /* main.m in Sources */,
 				58AAD9BC1D45964300BB18C0 /* TabBarController.m in Sources */,
+				5892F9971D5D75EC00D1DA86 /* HeroTableViewCell.m in Sources */,
 				58EF79051D44A023006FFE12 /* Item+CoreDataProperties.m in Sources */,
 				5825CEA41D2FBC2D00C45BE0 /* Hero.m in Sources */,
+				58B046A61D51E722007F7040 /* HeroDetailView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +327,22 @@
 				5825CE911D2FB98000C45BE0 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		589025BB1D508F5900268640 /* HeroDetailViewUI.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				589025BC1D508F5900268640 /* Base */,
+			);
+			name = HeroDetailViewUI.xib;
+			sourceTree = "<group>";
+		};
+		5892F9921D5D732D00D1DA86 /* HeroCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5892F9931D5D732D00D1DA86 /* Base */,
+			);
+			name = HeroCell.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -400,9 +436,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = MYDOTA2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SSS.MYDOTA2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,9 +448,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = MYDOTA2/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SSS.MYDOTA2;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -7,7 +7,6 @@
 //
 
 #import "SearchFunctionHeroCDTVC.h"
-#import "HeroDetailViewController.h"
 
 @interface  SearchFunctionHeroCDTVC () <UISearchBarDelegate, UISearchControllerDelegate,UISearchResultsUpdating>
 
@@ -34,7 +33,7 @@
     self.tableView.tableHeaderView = self.searchController.searchBar;
     
     // we want to be the delegate for our filtered table so didSelectRowAtIndexPath is called for both tables
-    self.searchResultsTableController.tableView.delegate = self;
+    //self.searchResultsTableController.tableView.delegate = self;
     self.searchController.delegate = self;
     self.searchController.dimsBackgroundDuringPresentation = YES; // default is YES
     self.searchController.searchBar.delegate = self; // so we can monitor text changes + others
@@ -46,10 +45,11 @@
     // hierarchy until it finds the root view controller or one that defines a presentation context.
     //
     self.definesPresentationContext = YES;  // know where you want UISearchController to be displayed
-    
+    NSLog(@"~~~~~~didload");
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
     
     // restore the searchController's active state
@@ -64,20 +64,11 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    HeroDetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"HeroDetailViewController"];
-   // detailViewController.product = selectedProduct; // hand off the current product to the detail view controller
-    
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    
-    // note: should not be necessary but current iOS 8.0 bug (seed 4) requires it
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}
 
 #pragma mark - UISearchBarDelegate
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
     [searchBar resignFirstResponder];
 }
 
@@ -90,23 +81,31 @@
 //
 // Implement this method if the default presentation is not adequate for your purposes.
 //
-- (void)presentSearchController:(UISearchController *)searchController {
-    
+- (void)presentSearchController:(UISearchController *)searchController
+{
+
 }
 
-- (void)willPresentSearchController:(UISearchController *)searchController {
+- (void)willPresentSearchController:(UISearchController *)searchController
+{
     // do something before the search controller is presented
+    //add the searchResultsTableController into navigationController stack
+    self.navigationController.viewControllers = @[self.searchResultsTableController,self];
 }
 
-- (void)didPresentSearchController:(UISearchController *)searchController {
+- (void)didPresentSearchController:(UISearchController *)searchController
+{
     // do something after the search controller is presented
 }
 
-- (void)willDismissSearchController:(UISearchController *)searchController {
+- (void)willDismissSearchController:(UISearchController *)searchController
+{
     // do something before the search controller is dismissed
+    self.navigationController.viewControllers = @[self];
 }
 
-- (void)didDismissSearchController:(UISearchController *)searchController {
+- (void)didDismissSearchController:(UISearchController *)searchController
+{
     // do something after the search controller is dismissed
 }
 
@@ -122,7 +121,8 @@ NSString *const SearchControllerIsActiveKey = @"SearchControllerIsActiveKey";
 NSString *const SearchBarTextKey = @"SearchBarTextKey";
 NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
 
-- (void)encodeRestorableStateWithCoder:(NSCoder *)coder {
+- (void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
     [super encodeRestorableStateWithCoder:coder];
     
     // encode the view state so it can be restored later
@@ -145,7 +145,8 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
     [coder encodeObject:searchController.searchBar.text forKey:SearchBarTextKey];
 }
 
-- (void)decodeRestorableStateWithCoder:(NSCoder *)coder {
+- (void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
     [super decodeRestorableStateWithCoder:coder];
     
     // restore the title
@@ -193,34 +194,32 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
                 
                 NSString *tempString3 = [NSString stringWithFormat:@"AND (localizedName CONTAINS[cd] '%c') ",p[i]];
                 predicateString3 = [predicateString3 stringByAppendingString:tempString3];
-
             }
         }
-    predicateString1 = [predicateString1 stringByAppendingString:@") OR "];
-    predicateString2 = [predicateString2 stringByAppendingString:@") OR "];
-    predicateString3 = [predicateString3 stringByAppendingString:@")"];
+        predicateString1 = [predicateString1 stringByAppendingString:@") OR "];
+        predicateString2 = [predicateString2 stringByAppendingString:@") OR "];
+        predicateString3 = [predicateString3 stringByAppendingString:@")"];
 
-    NSString *predicateString = [predicateString1 stringByAppendingString:predicateString2];
-    predicateString = [predicateString stringByAppendingString:predicateString3];
-        
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hero"];
-    request.predicate = [NSPredicate predicateWithFormat:predicateString];
-    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"namePinyin" ascending:YES]];
-    self.searchResultsTableController.fetchedResultsController = [[NSFetchedResultsController alloc]
-            initWithFetchRequest:request
-            managedObjectContext:self.managedObjectContect
-            sectionNameKeyPath:nil
-            cacheName:nil];
-    
-    // hand over the filtered results to our search results table
-    [self.searchResultsTableController.tableView reloadData];
-        
+        NSString *predicateString = [predicateString1 stringByAppendingString:predicateString2];
+        predicateString = [predicateString stringByAppendingString:predicateString3];
+            
+        NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hero"];
+        request.predicate = [NSPredicate predicateWithFormat:predicateString];
+        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"namePinyin" ascending:YES]];
+        self.searchResultsTableController.managedObjectContect = self.managedObjectContect;
+        self.searchResultsTableController.fetchedResultsController = [[NSFetchedResultsController alloc]
+                initWithFetchRequest:request
+                managedObjectContext:self.managedObjectContect
+                sectionNameKeyPath:nil
+                cacheName:nil];
+            
+        // hand over the filtered results to our search results table
+        [self.searchResultsTableController.tableView reloadData];
+
     }else {
         //deal with null ...
-        //such as adding some buttons named "敏捷" "远程" and so on
+        //add some buttons named "敏捷" "远程" and so on
     }
-    
 }
-
 
 @end

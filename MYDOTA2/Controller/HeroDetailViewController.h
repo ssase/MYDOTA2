@@ -10,4 +10,7 @@
 
 @interface HeroDetailViewController : UIViewController
 
+@property (nonatomic) NSManagedObjectContext *context;
+@property (nonatomic) NSString *heroID;
+
 @end

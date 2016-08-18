@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -39,11 +40,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="HTv-Cl-LL7"/>
-                    <nil key="simulatedTopBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYB-xg-1Lp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2054" y="-878"/>
+            <point key="canvasLocation" x="1978" y="-878"/>
         </scene>
         <!--装备-->
         <scene sceneID="8gf-n2-pNp">
@@ -161,26 +161,20 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="KWR-fv-qRF" secondAttribute="trailing" id="JdV-Mr-Mww"/>
                             <constraint firstItem="KWR-fv-qRF" firstAttribute="top" secondItem="Jtb-4L-7J6" secondAttribute="top" id="Ksu-jL-wSK"/>
-                            <constraint firstItem="KWR-fv-qRF" firstAttribute="bottom" secondItem="Bft-Rw-hNg" secondAttribute="top" id="k7u-pz-Cdo"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="KWR-fv-qRF" secondAttribute="bottom" id="Pf8-h1-Bvc"/>
                             <constraint firstItem="KWR-fv-qRF" firstAttribute="leading" secondItem="Jtb-4L-7J6" secondAttribute="leading" id="sZn-cf-iBH"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
-                        <outlet property="heroDetailScrollView" destination="KWR-fv-qRF" id="IXi-dY-pGV"/>
-                        <outlet property="searchDisplayController" destination="5XZ-C8-MFG" id="YnA-vj-JN8"/>
+                        <outlet property="heroDetailScrollView" destination="KWR-fv-qRF" id="90L-nP-Awb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahs-eR-g19" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="5XZ-C8-MFG">
-                    <connections>
-                        <outlet property="delegate" destination="maR-3h-lIr" id="caA-ap-Exi"/>
-                        <outlet property="searchContentsController" destination="maR-3h-lIr" id="Xcp-Zh-x97"/>
-                        <outlet property="searchResultsDataSource" destination="maR-3h-lIr" id="81C-n6-1NG"/>
-                        <outlet property="searchResultsDelegate" destination="maR-3h-lIr" id="3dc-yR-BOu"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2790" y="-878"/>
+            <point key="canvasLocation" x="2696" y="-878"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KIM-Lo-bGw">

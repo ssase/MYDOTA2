@@ -13,6 +13,26 @@
 
 // Insert code here to add functionality to your managed object subclass
 
++ (Hero *)fetchHeroWithHeroID:(NSString *)heroID
+     inManagedObjectContext:(NSManagedObjectContext *)context
+{
+    Hero *hero = nil;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Hero"];
+    request.predicate = [NSPredicate predicateWithFormat:@"heroID = %@",heroID];
+    
+    NSError *error;
+    NSArray *matches = [context executeFetchRequest:request error:&error];
+    
+    if ((!matches)||(error)||([matches count] > 1)) {
+        //handle errors
+    }else if([matches count]) {
+        
+        hero = [matches firstObject];
+    }else {
+        //deal with no object suitable
+    }
+    return hero;
+}
 
 + (Hero *)heroWithDota2Info:(NSDictionary *)heroDictionary
      inManagedObjectContext:(NSManagedObjectContext *)context
@@ -45,11 +65,9 @@
         CFStringTransform((CFMutableStringRef)heroName_pinyin, NULL, kCFStringTransformStripDiacritics, false);
         hero.namePinyin = heroName_pinyin;
         hero.namePinyinHeader = [[heroName_pinyin substringToIndex:1] uppercaseString];
-        NSLog(@"%@",hero.namePinyinHeader);
         
         hero.iconURL = [Dota2Fetcher getHeroeroIconURLStringWithHeroName:hero.name withFormate:DOTA2_HERO_ICON_FORMATE_VERT];
-        
-        
+                
     }
     
     return hero;
@@ -59,7 +77,6 @@
 + (void)loadHeroesFromDota2Array:(NSArray *)heroes
         intoManagedObjectContext:(NSManagedObjectContext *)context
 {
-    NSLog(@"%lu",(unsigned long)[heroes count]);
 
     for (NSDictionary *hero in heroes) {
         [self heroWithDota2Info:hero inManagedObjectContext:context];
